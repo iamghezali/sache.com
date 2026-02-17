@@ -1,4 +1,5 @@
 import type { JSX, ReactNode } from 'react';
+import Header from '@/components/web/header/header';
 
 interface Props {
     children?: ReactNode;
@@ -6,12 +7,12 @@ interface Props {
 
 export default function WebLayout({ children }: Props): JSX.Element {
     return (
-        <div className="pt-8">
-            <header></header>
-            <main>
-                <div className="mx-auto max-w-6xl">{children}</div>
-            </main>
-            <footer></footer>
+        <div className="px-3">
+            <div className="mx-auto max-w-330 pt-8">
+                <Header />
+                <main>{children}</main>
+                <footer></footer>
+            </div>
         </div>
     );
 }

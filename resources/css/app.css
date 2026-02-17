@@ -12,13 +12,13 @@
 }
 
 @theme inline {
-    --radius-sm: calc(var(--radius) - 4px);
-    --radius-md: calc(var(--radius) - 2px);
-    --radius-lg: var(--radius);
-    --radius-xl: calc(var(--radius) + 4px);
-    --radius-2xl: calc(var(--radius) + 8px);
-    --radius-3xl: calc(var(--radius) + 12px);
-    --radius-4xl: calc(var(--radius) + 16px);
+    /* --radius-sm: calc(var(--radius) - 4px); */
+    /* --radius-md: calc(var(--radius) - 2px); */
+    /* --radius-lg: var(--radius); */
+    /* --radius-xl: calc(var(--radius) + 4px); */
+    /* --radius-2xl: calc(var(--radius) + 8px); */
+    /* --radius-3xl: calc(var(--radius) + 12px); */
+    /* --radius-4xl: calc(var(--radius) + 16px); */
     --color-background: var(--background);
     --color-foreground: var(--foreground);
     --color-card: var(--card);
@@ -50,10 +50,71 @@
     --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
     --color-sidebar-border: var(--sidebar-border);
     --color-sidebar-ring: var(--sidebar-ring);
+
+    --color-brand-primary-100: #fcc7a1;
+    --color-brand-primary-200: #f98f43;
+    --color-brand-primary-300: #f76d0b;
+    --color-brand-primary-400: #c25406;
+    --color-brand-primary-500: #893c04;
+    --color-brand-primary-10: #f98f431a;
+
+    --color-brand-secondary-100: #cedeec;
+    --color-brand-secondary-200: #9dbcd8;
+    --color-brand-secondary-300: #6c9bc5;
+    --color-brand-secondary-400: #4378a9;
+    --color-brand-secondary-500: #2f5576;
+    --color-brand-secondary-10: #6c9bc51a;
+
+    --color-brand-tertiary-100: #e29a86;
+    --color-brand-tertiary-200: #d36849;
+    --color-brand-tertiary-300: #a84529;
+    --color-brand-tertiary-400: #6b2c1a;
+    --color-brand-tertiary-500: #401a0f;
+    --color-brand-tertiary-10: #6b2c1a1a;
+    --color-brand-tertiary-50: #6b2c1a80;
+
+    --color-info: #1f45c1;
+
+    --color-error-100: #fb3748;
+    --color-error-200: #d00416;
+    --color-error-10: #fb37481a;
+
+    --color-warning-100: #ffdb43;
+    --color-warning-200: #dfb400;
+    --color-warning-10: #ffdb431a;
+
+    --color-success-100: #84ebb4;
+    --color-success-200: #1fc16b;
+    --color-success-10: #1fc16b1a;
+
+    --color-brand-neutral-100: #e7e7e3;
+    --color-brand-neutral-200: #d3d3cc;
+    --color-brand-neutral-300: #bebeb5;
+    --color-brand-neutral-400: #aaaa9e;
+    --color-brand-neutral-500: #959588;
+    --color-brand-neutral-600: #7f7f73;
+    --color-brand-neutral-700: #67675f;
+    --color-brand-neutral-800: #50504a;
+    --color-brand-neutral-900: #3a3a36;
+    --color-brand-neutral-1000: #232321;
+    --color-brand-neutral-10: #2323211a;
+
+    --color-brand-neutral-alt-100: #f0f2f5;
+    --color-brand-neutral-alt-200: #e2e4ea;
+    --color-brand-neutral-alt-300: #d3d7e0;
+    --color-brand-neutral-alt-400: #c5cad6;
+    --color-brand-neutral-alt-500: #9ea6ba;
+    --color-brand-neutral-alt-600: #6c7896;
+    --color-brand-neutral-alt-700: #475065;
+    --color-brand-neutral-alt-800: #242832;
+    --color-brand-neutral-alt-900: #121419;
+    --color-brand-neutral-alt-50: #fafbfc;
+
+    --color-brand-shade-white: #fafafa;
 }
 
 :root {
-    --radius: 0.625rem;
+    /* --radius: 0.625rem; */
     --background: oklch(1 0 0);
     --foreground: oklch(0.145 0 0);
     --card: oklch(1 0 0);
@@ -128,4 +189,39 @@
     body {
         @apply bg-background text-foreground;
     }
+}
+
+@layer components {
+    .hero-gradient {
+        @apply bg-linear-to-b from-[#f98f4380] from-5% to-[#f98f430d] to-100%;
+    }
+
+    .banner-gradient {
+        @apply after:absolute after:inset-0 after:w-full after:bg-linear-to-b after:from-transparent after:from-80% after:to-black/20 after:to-100%;
+    }
+
+    .category-gradient {
+        @apply after:absolute after:inset-0 after:w-full after:bg-linear-to-b after:from-transparent after:from-60% after:to-white after:to-100%;
+    }
+}
+
+[data-aos='mute-text'] {
+    @apply opacity-100 transition-all duration-1000;
+}
+
+[data-aos='mute-text'].aos-animate {
+    @apply opacity-20 transition-all;
+}
+
+[data-aos='unmute-text'] {
+    @apply translate-y-5 opacity-20 transition-all duration-1000;
+}
+
+[data-aos='unmute-text'].aos-animate {
+    @apply translate-y-0 opacity-100;
+}
+
+/* Hide Scroll bar for dev purposes */
+::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera, Edge (Chromium) */
 }
