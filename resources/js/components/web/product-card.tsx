@@ -16,7 +16,7 @@ export default function ProductCard({ badge }: Props): JSX.Element {
 
                     <div className="absolute inset-0 size-full">
                         {badge && (
-                            <span className="inline-block rounded-tl-3xl rounded-br-3xl bg-brand-secondary-300 px-4 py-3 text-xs/tight font-medium text-white">
+                            <span className="inline-block rounded-tl-3xl rounded-br-3xl bg-brand-secondary-300 px-4 py-3 text-xs/tight font-medium text-white capitalize">
                                 {badge}
                             </span>
                         )}

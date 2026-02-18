@@ -4,7 +4,7 @@ import PlaceholderImage from '@/components/ui/placeholderImage';
 export default function Banners(): JSX.Element {
     return (
         <div className="mx-auto max-w-239.5">
-            <div className="flex flex-col gap-4">
+            <div className="flex w-full flex-col gap-4">
                 <div className="flex w-full basis-full gap-4">
                     <div className="w-full shrink-0 basis-40/100">
                         <div className="size-full">
@@ -34,7 +34,7 @@ export default function Banners(): JSX.Element {
                         </div>
                     </div>
 
-                    <div className="flex w-full shrink-0 basis-60/100 flex-col gap-4">
+                    <div className="flex w-full grow basis-60/100 flex-col gap-4">
                         <div className="w-full">
                             {/* Banner 2 */}
                             <div className="rounded-2xl bg-brand-shade-white p-2">
@@ -88,7 +88,7 @@ export default function Banners(): JSX.Element {
                     </div>
                 </div>
 
-                <div>
+                <div className="w-full">
                     {/* Banner 4 */}
                     <div className="rounded-2xl bg-brand-shade-white p-2">
                         <div className="banner-gradient relative overflow-hidden rounded-xl bg-neutral-100 pt-[31.72%]">

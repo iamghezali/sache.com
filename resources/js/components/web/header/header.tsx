@@ -1,3 +1,4 @@
+import { Link } from '@inertiajs/react';
 import type { JSX } from 'react';
 import logo from '@/assets/sache-logo.png';
 import PrimaryNavigation from '@/components/web/header/primary-navigation';
@@ -12,11 +13,13 @@ export default function Header(): JSX.Element {
                 </div>
 
                 <div className="shrink-0">
-                    <img
-                        className="h-9.5"
-                        src={logo}
-                        alt="Sach Logo"
-                    />
+                    <Link href={'/'}>
+                        <img
+                            className="h-9.5"
+                            src={logo}
+                            alt="Sach Logo"
+                        />
+                    </Link>
                 </div>
 
                 <div className="flex h-full grow basis-full items-center justify-end">
