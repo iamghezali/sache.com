@@ -2,7 +2,7 @@ import type { JSX } from 'react';
 import { Carousel, CarouselContent, CarouselDots, CarouselItem, CarouselNext, CarouselPrevious, CarouselViewport } from '@/components/ui/carousel';
 import ProductCard from '@/components/web/product-card';
 
-export default function ProductsSlider(): JSX.Element {
+export default function ProductCarousel(): JSX.Element {
     return (
         <Carousel
             opts={{

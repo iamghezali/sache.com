@@ -19,7 +19,12 @@ const toggleVariants = cva(
                     'data-[state=on]:bg-brand-neutral-1000 data-[state=on]:text-white',
                 ],
 
-                'colors-filter': ['rounded-lg ring-3 ring-transparent', 'data-[state=on]:ring-brand-neutral-600'],
+                'sizes-filter-lg': [
+                    'h-12 flex-1 rounded-lg bg-brand-shade-white text-sm font-medium text-brand-neutral-1000 hover:bg-brand-neutral-1000/90 hover:text-white disabled:bg-brand-neutral-200 disabled:text-brand-neutral-500',
+                    'data-[state=on]:bg-brand-neutral-1000 data-[state=on]:text-white',
+                ],
+
+                'colors-filter': ['rounded-lg ring-3 ring-transparent', 'data-[state=on]:ring-brand-neutral-1000'],
             },
         },
         defaultVariants: {

@@ -21,7 +21,7 @@ export default function FilterColors(): JSX.Element {
     return (
         <>
             <ToggleGroup
-                className="flex flex-wrap gap-4 p-1"
+                className="flex flex-wrap gap-4"
                 type="multiple"
                 variant={'colors-filter'}
                 defaultValue={['']}

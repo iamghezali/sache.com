@@ -21,7 +21,7 @@ export default function CategoryCard(): JSX.Element {
                             <Button
                                 className="ml-auto"
                                 variant={'neutral'}
-                                size={'icon-lg'}
+                                size={'icon'}
                             >
                                 <ArrowUpRightIcon
                                     className="size-8"

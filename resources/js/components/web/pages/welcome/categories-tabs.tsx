@@ -26,7 +26,7 @@ function TabsList({ ...props }: React.ComponentProps<typeof TabsPrimitive.List>)
 function TabsTrigger({ ...props }: React.ComponentProps<typeof TabsPrimitive.Trigger>) {
     return (
         <TabsPrimitive.Trigger
-            className="basis-full cursor-pointer rounded-full bg-brand-primary-200/20 px-4 py-4 text-center text-[1.75rem]/tight font-semibold text-brand-neutral-1000 transition-all data-[state=active]:bg-brand-primary-200"
+            className="basis-full cursor-pointer rounded-full bg-brand-primary-200/20 px-4 py-4 text-center text-[1.75rem]/tight font-semibold text-brand-neutral-1000 transition-all hover:bg-brand-primary-200/25 data-[state=active]:bg-brand-primary-200"
             data-slot="tabs-trigger"
             {...props}
         />
