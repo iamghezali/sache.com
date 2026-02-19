@@ -24,14 +24,14 @@ export default function ProductCard({ badge }: Props): JSX.Element {
                 </div>
             </div>
 
-            <span className="mt-4 block h-14 text-2xl/tight font-semibold text-brand-neutral-1000">Dress Crushed With Drawstrings - Beige</span>
+            <span className="mt-4 block min-h-14 text-2xl/tight font-semibold text-brand-neutral-1000">Dress Crushed With Drawstrings - Beige</span>
 
             <Button
                 className="mt-4 w-full uppercase"
                 variant={'neutral'}
                 asChild
             >
-                <Link>View Product - 28,000 DZD</Link>
+                <Link href="/product">View Product - 28,000 DZD</Link>
             </Button>
         </div>
     );
