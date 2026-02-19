@@ -21,7 +21,7 @@ export default function ProductsSlider(): JSX.Element {
             <div className="mt-8">
                 <CarouselViewport>
                     <CarouselContent>
-                        {Array.from({ length: 6 }).map((_, i) => (
+                        {Array.from({ length: 7 }).map((_, i) => (
                             <CarouselItem
                                 className="basis-1/4"
                                 key={`products-slider-card-${i}`}

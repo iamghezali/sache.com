@@ -24,6 +24,9 @@ type CarouselContextProps = {
     scrollNext: () => void;
     canScrollPrev: boolean;
     canScrollNext: boolean;
+    goTo: (index: number) => void;
+    scrollSnaps: number[] | undefined;
+    selectedSnap: number | undefined;
 } & CarouselProps;
 
 const CarouselContext = React.createContext<CarouselContextProps | null>(null);
@@ -49,6 +52,9 @@ function Carousel({ orientation = 'horizontal', opts, setApi, plugins, className
     const [canScrollPrev, setCanScrollPrev] = React.useState(false);
     const [canScrollNext, setCanScrollNext] = React.useState(false);
 
+    const [scrollSnaps, setScrollSnaps] = React.useState<number[] | undefined>([]);
+    const [selectedSnap, setSelectedSnap] = React.useState<number | undefined>(0);
+
     const onSelect = React.useCallback((api: CarouselApi) => {
         if (!api) return;
         setCanScrollPrev(api.canScrollPrev());
@@ -62,6 +68,21 @@ function Carousel({ orientation = 'horizontal', opts, setApi, plugins, className
     const scrollNext = React.useCallback(() => {
         api?.scrollNext();
     }, [api]);
+
+    const goTo = React.useCallback(
+        (index: number) => {
+            api?.scrollTo(index);
+        },
+        [api],
+    );
+
+    const setupSnaps = React.useCallback((api: CarouselApi) => {
+        setScrollSnaps(api?.scrollSnapList());
+    }, []);
+
+    const setActiveSnap = React.useCallback((api: CarouselApi) => {
+        setSelectedSnap(api?.selectedScrollSnap());
+    }, []);
 
     const handleKeyDown = React.useCallback(
         (event: React.KeyboardEvent<HTMLDivElement>) => {
@@ -84,13 +105,21 @@ function Carousel({ orientation = 'horizontal', opts, setApi, plugins, className
     React.useEffect(() => {
         if (!api) return;
         onSelect(api);
+
+        setupSnaps(api);
+        setActiveSnap(api);
+
         api.on('reInit', onSelect);
         api.on('select', onSelect);
+
+        api.on('reInit', setupSnaps);
+        api.on('reInit', setActiveSnap);
+        api.on('select', setActiveSnap);
 
         return () => {
             api?.off('select', onSelect);
         };
-    }, [api, onSelect]);
+    }, [api, onSelect, setupSnaps, setActiveSnap]);
 
     return (
         <CarouselContext.Provider
@@ -103,6 +132,9 @@ function Carousel({ orientation = 'horizontal', opts, setApi, plugins, className
                 scrollNext,
                 canScrollPrev,
                 canScrollNext,
+                scrollSnaps,
+                selectedSnap,
+                goTo,
             }}
         >
             <div
@@ -122,7 +154,7 @@ function Carousel({ orientation = 'horizontal', opts, setApi, plugins, className
 function CarouselViewport({ ...props }: React.ComponentProps<'div'>) {
     return (
         <div
-            className="flex touch-pan-y"
+            className="flex w-full touch-pan-y"
             {...props}
         />
     );
@@ -133,7 +165,7 @@ function CarouselContent({ className, ...props }: React.ComponentProps<'div'>) {
 
     return (
         <div
-            className="overflow-hidden"
+            className="w-full overflow-hidden"
             ref={carouselRef}
             data-slot="carousel-content"
         >
@@ -159,19 +191,21 @@ function CarouselItem({ className, ...props }: React.ComponentProps<'div'>) {
     );
 }
 
-function CarouselDots({ ...props }: React.ComponentProps<'div'>) {
+function CarouselDots({ className }: React.ComponentProps<'div'>) {
+    const { scrollSnaps, selectedSnap, goTo } = useCarousel();
+
     return (
-        <div
-            {...props}
-            className="mt-4"
-        >
-            {[1, 2, 3, 4].map((_, index) => (
+        <div className="mt-8 flex justify-center gap-1">
+            {scrollSnaps?.map((_, index) => (
                 <button
-                    className="size-4 rounded-md bg-neutral-400"
+                    className={cn(
+                        'h-1.5 w-10 cursor-pointer rounded-md',
+                        selectedSnap === index ? 'bg-brand-secondary-300' : 'bg-brand-neutral-400',
+                        className,
+                    )}
                     key={index}
-                >
-                    {/* Button content */}
-                </button>
+                    onClick={() => goTo(index)}
+                />
             ))}
         </div>
     );
