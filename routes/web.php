@@ -14,3 +14,7 @@ Route::get('/shop', function () {
 Route::get('/product', function () {
     return Inertia::render('product');
 })->name('product');
+
+Route::get('/shop/cart', function () {
+    return Inertia::render('cart');
+})->name('shop.cart');

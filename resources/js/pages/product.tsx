@@ -1,3 +1,4 @@
+import { Link } from '@inertiajs/react';
 import { HeartIcon } from 'lucide-react';
 import type { JSX } from 'react';
 import { Button } from '@/components/ui/button';
@@ -120,22 +121,23 @@ export default function Product(): JSX.Element {
                                 <Button
                                     className="uppercase"
                                     variant="secondary"
+                                    asChild
                                 >
-                                    Buy it Now
+                                    <Link href="#">Buy it Now</Link>
                                 </Button>
                             </div>
 
                             <div>
                                 <h6 className="font-semibold uppercase">About The Product</h6>
 
-                                <p className="mt-2 flex flex-col gap-4 text-brand-neutral-1000/80">
+                                <div className="mt-2 flex flex-col gap-4 text-brand-neutral-1000/80">
                                     <span>Material : Ribbed Triko</span>
                                     <span>This product is excluded from all promotional discounts and offers.</span>
                                     <ul className="list-disc pl-6">
                                         <li>Pay over time in interest-free installments with Affirm, Klarna or Afterpay.</li>
                                         <li>Join adiClub to get unlimited free standard shipping, returns, & exchanges.</li>
                                     </ul>
-                                </p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -147,7 +149,6 @@ export default function Product(): JSX.Element {
                     <ProductCarousel />
                 </div>
             </section>
-            <div className="h-10"></div>
         </WebLayout>
     );
 }

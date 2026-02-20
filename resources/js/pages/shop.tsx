@@ -1,3 +1,4 @@
+import EmptyList from '@/components/web/pages/shop/empty-list';
 import ShopBanner from '@/components/web/pages/shop/shop-banner';
 import ShopPagination from '@/components/web/pages/shop/shop-pagination';
 import ShopSidebar from '@/components/web/pages/shop/shop-sidebar';
@@ -5,6 +6,8 @@ import ProductCard from '@/components/web/product-card';
 import WebLayout from '@/layouts/web-layout';
 
 export default function Shop() {
+    const productsList = Array.from({ length: 0 });
+
     return (
         <WebLayout>
             <section>
@@ -25,14 +28,20 @@ export default function Shop() {
                             <ShopSidebar />
                         </div>
 
-                        <div>
-                            <div className="grid grid-cols-3 gap-x-4 gap-y-9.5">
-                                {Array.from({ length: 9 }).map((_, i) => (
-                                    <ProductCard key={`product-card-${i}`} />
-                                ))}
-                            </div>
+                        <div className="min-w-0 grow">
+                            {productsList.length === 0 ? (
+                                <EmptyList />
+                            ) : (
+                                <>
+                                    <div className="grid grid-cols-3 gap-x-4 gap-y-9.5">
+                                        {productsList.map((_, i) => (
+                                            <ProductCard key={`product-card-${i}`} />
+                                        ))}
+                                    </div>
 
-                            <ShopPagination className="mt-8" />
+                                    <ShopPagination className="mt-8" />
+                                </>
+                            )}
                         </div>
                     </div>
                 </div>

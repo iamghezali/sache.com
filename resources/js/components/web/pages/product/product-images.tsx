@@ -23,25 +23,25 @@ export default function ProductImages(): JSX.Element {
             <div className="flex gap-8">
                 <div className="flex shrink-0 basis-[21%] flex-col gap-3">
                     <div
-                        className="relative cursor-zoom-in overflow-hidden rounded-lg bg-neutral-300 pt-[120%]"
+                        className="relative overflow-hidden rounded-lg bg-neutral-300 pt-[120%]"
                         onClick={() => OpenInLightbox(2)}
                     >
                         <PlaceholderImage />
                     </div>
                     <div
-                        className="relative cursor-zoom-in overflow-hidden rounded-lg bg-neutral-300 pt-[120%]"
+                        className="relative overflow-hidden rounded-lg bg-neutral-300 pt-[120%]"
                         onClick={() => OpenInLightbox(3)}
                     >
                         <PlaceholderImage />
                     </div>
                     <div
-                        className="relative cursor-zoom-in overflow-hidden rounded-lg bg-neutral-300 pt-[120%]"
+                        className="relative overflow-hidden rounded-lg bg-neutral-300 pt-[120%]"
                         onClick={() => OpenInLightbox(4)}
                     >
                         <PlaceholderImage />
                     </div>
                     <div
-                        className="relative cursor-zoom-in overflow-hidden rounded-lg bg-neutral-300 pt-[120%]"
+                        className="relative overflow-hidden rounded-lg bg-neutral-300 pt-[120%]"
                         onClick={() => OpenInLightbox(5)}
                     >
                         <PlaceholderImage />
@@ -49,7 +49,7 @@ export default function ProductImages(): JSX.Element {
                 </div>
 
                 <div
-                    className="relative min-w-0 grow cursor-zoom-in overflow-hidden rounded-[1.75rem] bg-neutral-300"
+                    className="relative min-w-0 grow overflow-hidden rounded-[1.75rem] bg-neutral-300"
                     onClick={() => OpenInLightbox(1)}
                 >
                     <PlaceholderImage />

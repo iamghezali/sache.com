@@ -1,6 +1,6 @@
 import { Link } from '@inertiajs/react';
 import type { JSX } from 'react';
-import logo from '@/assets/sache-logo.png';
+import logo from '@/assets/sach-logo.png';
 import PrimaryNavigation from '@/components/web/header/primary-navigation';
 import SecondaryNavigation from '@/components/web/header/secondary-navigation';
 
