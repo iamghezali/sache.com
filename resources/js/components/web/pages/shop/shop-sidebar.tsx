@@ -5,59 +5,59 @@ import FilterFabric from '@/components/web/pages/shop/filter-fabric';
 import FilterPricing from '@/components/web/pages/shop/filter-pricing';
 import FilterSizes from '@/components/web/pages/shop/filter-sizes';
 import FilterStyle from '@/components/web/pages/shop/filter-style';
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/web/pages/shop/filters-accordion';
+import { FilterAccordion, FilterAccordionContent, FilterAccordionItem, FilterAccordionTrigger } from '@/components/web/pages/shop/filters-accordion';
 
 export default function ShopSidebar(): JSX.Element {
     return (
         <div className="flex flex-col gap-4">
             <span className="text-2xl/tight font-semibold text-brand-neutral-1000">Filters</span>
 
-            <Accordion
+            <FilterAccordion
                 type="multiple"
                 defaultValue={['category', 'size', 'color', 'style', 'fabric', 'price']}
             >
-                <AccordionItem value="category">
-                    <AccordionTrigger>Category</AccordionTrigger>
-                    <AccordionContent>
+                <FilterAccordionItem value="category">
+                    <FilterAccordionTrigger>Category</FilterAccordionTrigger>
+                    <FilterAccordionContent>
                         <FilterCategories />
-                    </AccordionContent>
-                </AccordionItem>
+                    </FilterAccordionContent>
+                </FilterAccordionItem>
 
-                <AccordionItem value="size">
-                    <AccordionTrigger>Size</AccordionTrigger>
-                    <AccordionContent>
+                <FilterAccordionItem value="size">
+                    <FilterAccordionTrigger>Size</FilterAccordionTrigger>
+                    <FilterAccordionContent>
                         <FilterSizes />
-                    </AccordionContent>
-                </AccordionItem>
+                    </FilterAccordionContent>
+                </FilterAccordionItem>
 
-                <AccordionItem value="color">
-                    <AccordionTrigger>Color</AccordionTrigger>
-                    <AccordionContent>
+                <FilterAccordionItem value="color">
+                    <FilterAccordionTrigger>Color</FilterAccordionTrigger>
+                    <FilterAccordionContent>
                         <FilterColors />
-                    </AccordionContent>
-                </AccordionItem>
+                    </FilterAccordionContent>
+                </FilterAccordionItem>
 
-                <AccordionItem value="style">
-                    <AccordionTrigger>Style</AccordionTrigger>
-                    <AccordionContent>
+                <FilterAccordionItem value="style">
+                    <FilterAccordionTrigger>Style</FilterAccordionTrigger>
+                    <FilterAccordionContent>
                         <FilterStyle />
-                    </AccordionContent>
-                </AccordionItem>
+                    </FilterAccordionContent>
+                </FilterAccordionItem>
 
-                <AccordionItem value="fabric">
-                    <AccordionTrigger>Fabric</AccordionTrigger>
-                    <AccordionContent>
+                <FilterAccordionItem value="fabric">
+                    <FilterAccordionTrigger>Fabric</FilterAccordionTrigger>
+                    <FilterAccordionContent>
                         <FilterFabric />
-                    </AccordionContent>
-                </AccordionItem>
+                    </FilterAccordionContent>
+                </FilterAccordionItem>
 
-                <AccordionItem value="price">
-                    <AccordionTrigger>Price</AccordionTrigger>
-                    <AccordionContent className="pt-6 pb-4">
+                <FilterAccordionItem value="price">
+                    <FilterAccordionTrigger>Price</FilterAccordionTrigger>
+                    <FilterAccordionContent className="pt-6 pb-4">
                         <FilterPricing />
-                    </AccordionContent>
-                </AccordionItem>
-            </Accordion>
+                    </FilterAccordionContent>
+                </FilterAccordionItem>
+            </FilterAccordion>
         </div>
     );
 }

@@ -1,8 +1,11 @@
 import type { JSX } from 'react';
 import { Carousel, CarouselContent, CarouselDots, CarouselItem, CarouselNext, CarouselPrevious, CarouselViewport } from '@/components/ui/carousel';
 import ProductCard from '@/components/web/product-card';
+import useAOS from '@/hooks/useAOS';
 
 export default function ProductCarousel(): JSX.Element {
+    useAOS();
+
     return (
         <Carousel
             opts={{

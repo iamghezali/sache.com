@@ -57,4 +57,9 @@ function AccordionContent({ className, children, ...props }: React.ComponentProp
     );
 }
 
-export { Accordion, AccordionItem, AccordionTrigger, AccordionContent };
+export {
+    Accordion as FilterAccordion,
+    AccordionItem as FilterAccordionItem,
+    AccordionTrigger as FilterAccordionTrigger,
+    AccordionContent as FilterAccordionContent,
+};

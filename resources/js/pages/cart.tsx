@@ -3,6 +3,7 @@ import type { JSX } from 'react';
 import { Button } from '@/components/ui/button';
 import CartItem from '@/components/web/pages/cart/cart-item';
 import EmptyCart from '@/components/web/pages/cart/empty-cart';
+import ProductCarousel from '@/components/web/products-carousel';
 import WebLayout from '@/layouts/web-layout';
 
 export default function Cart(): JSX.Element {
@@ -14,10 +15,6 @@ export default function Cart(): JSX.Element {
                 <div className="mt-7">
                     <div>
                         <h1 className="text-[2rem]/tight font-semibold text-brand-neutral-1000">Cart</h1>
-
-                        <span className="mt-2 inline-block text-sm/tight text-brand-neutral-1000">
-                            Enjoy up to 30% off hundreds of styles during the New Year sale - while suppiles last. Use code “SACH2026”.
-                        </span>
                     </div>
 
                     {cartItemsList.length === 0 ? (
@@ -31,7 +28,7 @@ export default function Cart(): JSX.Element {
                                 </span>
 
                                 <div className="mt-11">
-                                    <div className="flex flex-col gap-6">
+                                    <div className="flex flex-col gap-10">
                                         {cartItemsList.map((_, i) => (
                                             <CartItem key={`cart-item-${i}`} />
                                         ))}
@@ -75,6 +72,12 @@ export default function Cart(): JSX.Element {
                             </div>
                         </div>
                     )}
+                </div>
+            </section>
+
+            <section>
+                <div className="mt-24">
+                    <ProductCarousel />
                 </div>
             </section>
         </WebLayout>

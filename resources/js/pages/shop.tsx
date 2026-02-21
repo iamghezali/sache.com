@@ -6,7 +6,7 @@ import ProductCard from '@/components/web/product-card';
 import WebLayout from '@/layouts/web-layout';
 
 export default function Shop() {
-    const productsList = Array.from({ length: 0 });
+    const productsList = Array.from({ length: 9 });
 
     return (
         <WebLayout>
