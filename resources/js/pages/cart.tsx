@@ -43,7 +43,7 @@ export default function Cart(): JSX.Element {
                                     <ul className="mt-6 flex flex-col gap-4 text-brand-neutral-1000">
                                         <li className="flex items-center justify-between text-xl">
                                             <span>
-                                                1 ITEM <span className="text-brand-neutral-800">x2</span>
+                                                <span className="text-brand-neutral-800">x1</span> Cozy Knit Set
                                             </span>
                                             <span className="text-brand-neutral-1000/80">12,000 DZD</span>
                                         </li>
