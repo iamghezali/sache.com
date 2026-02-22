@@ -1,8 +1,8 @@
 import type { JSX } from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import EmptyOrders from '@/components/web/pages/orders/empty-orders';
 import OrderItemCard from '@/components/web/pages/orders/order-item-card';
 import WebLayout from '@/layouts/web-layout';
-import EmptyOrders from '@/components/web/pages/orders/empty-orders';
 
 export default function OrdersList(): JSX.Element {
     return (

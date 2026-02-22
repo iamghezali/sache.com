@@ -1,9 +1,9 @@
 import { ArchiveXIcon, HeartIcon } from 'lucide-react';
 import type { JSX } from 'react';
-import PlaceholderImage from '@/components/ui/placeholderImage';
-import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import PlaceholderImage from '@/components/ui/placeholderImage';
+import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 
 export default function CartItem(): JSX.Element {
     return (
