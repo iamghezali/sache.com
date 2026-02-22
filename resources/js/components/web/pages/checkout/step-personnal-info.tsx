@@ -29,7 +29,7 @@ export default function StepPersonnalInfo(): JSX.Element {
                     </TabsTrigger>
 
                     <Separator
-                        className="data-[orientation=vertical]:w-0.5"
+                        className="data-[orientation=vertical]:h-5 data-[orientation=vertical]:w-0.5"
                         orientation="vertical"
                     />
 
