@@ -11,6 +11,10 @@ Route::get('/login', function () {
     return Inertia::render('login');
 })->name('login');
 
+Route::get('/register', function () {
+    return Inertia::render('register');
+})->name('register');
+
 Route::get('/shop', function () {
     return Inertia::render('shop');
 })->name('shop');

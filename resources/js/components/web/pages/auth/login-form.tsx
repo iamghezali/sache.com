@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import GoogleButton from '@/components/web/pages/login/google-button';
+import GoogleButton from '@/components/web/pages/auth/google-button';
 
 export default function LoginForm(): JSX.Element {
     return (
