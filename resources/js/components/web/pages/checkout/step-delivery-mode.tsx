@@ -5,7 +5,7 @@ import { Field, FieldContent, FieldLabel } from '@/components/ui/field';
 import PlaceholderImage from '@/components/ui/placeholderImage';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { Textarea } from '@/components/ui/textarea';
-import { useCheckout } from '@/pages/checkout';
+import { useCheckout } from '@/pages/checkout/checkout';
 
 export default function StepDeliveryMode(): JSX.Element {
     const { setActiveStep, setStepValid, scrollToStep } = useCheckout();
@@ -13,7 +13,7 @@ export default function StepDeliveryMode(): JSX.Element {
     function HandleConfirmation() {
         setStepValid('3');
         setActiveStep('4');
-        scrollToStep('4');
+        scrollToStep('3');
     }
 
     return (

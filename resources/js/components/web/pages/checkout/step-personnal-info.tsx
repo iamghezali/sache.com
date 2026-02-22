@@ -1,6 +1,6 @@
 import type { JSX } from 'react';
 import { Button } from '@/components/ui/button';
-import { useCheckout } from '@/pages/checkout';
+import { useCheckout } from '@/pages/checkout/checkout';
 
 export default function StepPersonnalInfo(): JSX.Element {
     const { setActiveStep, setStepValid, scrollToStep } = useCheckout();
@@ -8,7 +8,7 @@ export default function StepPersonnalInfo(): JSX.Element {
     function HandleConfirmation() {
         setStepValid('1');
         setActiveStep('2');
-        scrollToStep('2');
+        scrollToStep('1');
     }
 
     return (

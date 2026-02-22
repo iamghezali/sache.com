@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { useCheckout } from '@/pages/checkout';
+import { useCheckout } from '@/pages/checkout/checkout';
 
 export default function StepAddress(): JSX.Element {
     const { setActiveStep, setStepValid, scrollToStep } = useCheckout();
@@ -14,7 +14,7 @@ export default function StepAddress(): JSX.Element {
     function HandleConfirmation() {
         setStepValid('2');
         setActiveStep('3');
-        scrollToStep('3');
+        scrollToStep('2');
     }
 
     return (

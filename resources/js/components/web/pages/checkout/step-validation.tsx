@@ -1,4 +1,7 @@
+import { Link } from '@inertiajs/react';
+import { ArrowRight } from 'lucide-react';
 import type { JSX } from 'react';
+import { Button } from '@/components/ui/button';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Field, FieldContent, FieldLabel } from '@/components/ui/field';
 import { Label } from '@/components/ui/label';
@@ -73,11 +76,11 @@ export default function StepValidation(): JSX.Element {
                 <h2 className="text-xl font-medium">Payment Option</h2>
 
                 <RadioGroup>
-                    <FieldLabel htmlFor="delivery_option_yalidine">
+                    <FieldLabel htmlFor="payment_option_cash_on_delivery">
                         <Field orientation="horizontal">
                             <RadioGroupItem
-                                id="delivery_option_yalidine"
-                                value="yalidine"
+                                id="payment_option_cash_on_delivery"
+                                value="cash_on_delivery"
                                 checked
                                 disabled
                             />
@@ -94,13 +97,26 @@ export default function StepValidation(): JSX.Element {
                 </RadioGroup>
             </div>
 
-            <Label>
-                <Checkbox
-                    checked
-                    disabled
-                />
-                My billing and delivery information are the same.
-            </Label>
+            <div className="flex flex-col gap-5">
+                <Label>
+                    <Checkbox
+                        checked
+                        disabled
+                    />
+                    My billing and delivery information are the same.
+                </Label>
+
+                <Button
+                    className="justify-between px-4 uppercase"
+                    variant="neutral"
+                    asChild
+                >
+                    <Link href="/shop/checkout/success">
+                        Validate & Ship
+                        <ArrowRight />
+                    </Link>
+                </Button>
+            </div>
         </div>
     );
 }

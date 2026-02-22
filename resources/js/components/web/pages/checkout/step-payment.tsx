@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Field, FieldContent, FieldLabel } from '@/components/ui/field';
 import PlaceholderImage from '@/components/ui/placeholderImage';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
-import { useCheckout } from '@/pages/checkout';
+import { useCheckout } from '@/pages/checkout/checkout';
 
 export default function StepPayment(): JSX.Element {
     const { setActiveStep, setStepValid, scrollToStep } = useCheckout();
@@ -12,7 +12,7 @@ export default function StepPayment(): JSX.Element {
     function HandleConfirmation() {
         setStepValid('4');
         setActiveStep('5');
-        scrollToStep('5');
+        scrollToStep('4');
     }
 
     return (
@@ -24,12 +24,12 @@ export default function StepPayment(): JSX.Element {
                     <div className="mt-6">
                         <RadioGroup
                             className="gap-6"
-                            defaultValue="chargily"
+                            defaultValue="cash_on_delivery"
                         >
-                            <FieldLabel htmlFor="payment_option_yalidine">
+                            <FieldLabel htmlFor="payment_option_cash_on_delivery">
                                 <Field orientation="horizontal">
                                     <RadioGroupItem
-                                        id="payment_option_yalidine"
+                                        id="payment_option_cash_on_delivery"
                                         value="cash_on_delivery"
                                     />
 

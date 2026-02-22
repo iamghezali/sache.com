@@ -39,7 +39,7 @@ export const useCheckout = () => {
 };
 
 export default function Checkout(): JSX.Element {
-    const [activeStep, setActiveStep] = useState<string>('5');
+    const [activeStep, setActiveStep] = useState<string>('1');
     const [checkoutSteps, setCheckoutSteps] = useState<Step[]>([
         {
             value: '1',
