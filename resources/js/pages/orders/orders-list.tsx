@@ -2,6 +2,7 @@ import type { JSX } from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import OrderItemCard from '@/components/web/pages/orders/order-item-card';
 import WebLayout from '@/layouts/web-layout';
+import EmptyOrders from '@/components/web/pages/orders/empty-orders';
 
 export default function OrdersList(): JSX.Element {
     return (
@@ -64,7 +65,9 @@ export default function OrdersList(): JSX.Element {
                                     }}
                                 />
                             </TabsContent>
-                            <TabsContent value="delivered">Delivered.</TabsContent>
+                            <TabsContent value="delivered">
+                                <EmptyOrders message="Your don't have delivered items" />
+                            </TabsContent>
                             <TabsContent value="custom">Custom.</TabsContent>
                         </Tabs>
                     </div>
