@@ -8,7 +8,13 @@ import { Label } from '@/components/ui/label';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import GoogleButton from '@/components/web/pages/auth/google-button';
 
-export default function RegisterForm(): JSX.Element {
+export default function RegisterForm({
+    label = 'Register',
+    onClick,
+}: {
+    label?: string;
+    onClick?: React.MouseEventHandler<HTMLButtonElement>;
+}): JSX.Element {
     return (
         <div>
             <h1 className="font-rubik text-4xl/tight font-semibold text-brand-neutral-1000">Register</h1>
@@ -95,8 +101,10 @@ export default function RegisterForm(): JSX.Element {
                     <Button
                         className="w-full justify-between px-4 uppercase"
                         variant="neutral"
+                        type="button"
+                        onClick={onClick}
                     >
-                        Register
+                        {label}
                         <ArrowRightIcon />
                     </Button>
                 </form>

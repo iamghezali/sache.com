@@ -28,7 +28,7 @@ export default function CheckoutSuccess(): JSX.Element {
                     size="sm"
                     asChild
                 >
-                    <Link href="/shop/my-orders">
+                    <Link href="/shop/orders">
                         View My Orders
                         <ArrowRight strokeWidth={3} />
                     </Link>

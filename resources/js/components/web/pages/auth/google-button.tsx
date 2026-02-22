@@ -2,7 +2,7 @@ import type { JSX } from 'react';
 
 export default function GoogleButton({ children = 'Sign in with Google' }: React.ComponentProps<'div'>): JSX.Element {
     return (
-        <button className="h-13.5 w-full cursor-pointer rounded-[0.625rem] bg-brand-shade-white shadow-md hover:opacity-90">
+        <button className="h-13.5 w-full cursor-pointer rounded-[0.625rem] border bg-brand-shade-white shadow-md hover:opacity-90">
             <div className="flex items-center justify-center gap-4">
                 <div className="size-6 shrink-0">
                     <svg

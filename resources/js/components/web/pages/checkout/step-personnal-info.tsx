@@ -1,25 +1,61 @@
 import type { JSX } from 'react';
-import { Button } from '@/components/ui/button';
+import { Separator } from '@/components/ui/separator';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import LoginForm from '@/components/web/pages/auth/login-form';
+import RegisterForm from '@/components/web/pages/auth/register-form';
 import { useCheckout } from '@/pages/checkout/checkout';
 
 export default function StepPersonnalInfo(): JSX.Element {
     const { setActiveStep, setStepValid, scrollToStep } = useCheckout();
 
-    function HandleConfirmation() {
+    const HandleClick = () => {
         setStepValid('1');
         setActiveStep('2');
         scrollToStep('1');
-    }
+    };
 
     return (
-        <div>
-            <Button
-                className="w-full"
-                variant="neutral"
-                onClick={HandleConfirmation}
-            >
-                Login
-            </Button>
+        <div className="mt-2 pb-2">
+            <Tabs defaultValue="new">
+                <TabsList
+                    className="gap-5"
+                    variant="text"
+                >
+                    <TabsTrigger
+                        className="text-xl"
+                        value="new"
+                    >
+                        Create a New Account
+                    </TabsTrigger>
+
+                    <Separator
+                        className="data-[orientation=vertical]:w-0.5"
+                        orientation="vertical"
+                    />
+
+                    <TabsTrigger
+                        className="text-xl"
+                        value="login"
+                    >
+                        Login
+                    </TabsTrigger>
+                </TabsList>
+
+                <div className="mt-4">
+                    <TabsContent value="new">
+                        <RegisterForm
+                            onClick={HandleClick}
+                            label="Login & Continue"
+                        />
+                    </TabsContent>
+                    <TabsContent value="login">
+                        <LoginForm
+                            onClick={HandleClick}
+                            label="Login & Continue"
+                        />
+                    </TabsContent>
+                </div>
+            </Tabs>
         </div>
     );
 }

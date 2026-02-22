@@ -89,7 +89,7 @@ export default function Checkout(): JSX.Element {
             <section>
                 <div className="mt-5">
                     <div className="flex gap-25">
-                        <div className="min-w-0 grow">
+                        <div className="min-w-0 flex-1">
                             <CheckoutContext.Provider value={{ setActiveStep, setStepValid, scrollToStep }}>
                                 <StepperAccordion
                                     className="flex flex-col gap-6"

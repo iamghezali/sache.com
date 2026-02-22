@@ -35,3 +35,10 @@ Route::get('/shop/checkout/success', function () {
     return Inertia::render('checkout/checkout-success');
 })->name('shop.checkout.success');
 
+Route::get('/shop/orders/', function () {
+    return Inertia::render('orders/orders-list');
+})->name('shop.orders');
+
+Route::get('/custom-order/create/', function () {
+    return Inertia::render('custom-order/create-custom');
+})->name('custom-order.create');

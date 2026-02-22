@@ -7,7 +7,13 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import GoogleButton from '@/components/web/pages/auth/google-button';
 
-export default function LoginForm(): JSX.Element {
+export default function LoginForm({
+    label = 'Login',
+    onClick,
+}: {
+    label?: string;
+    onClick?: React.MouseEventHandler<HTMLButtonElement>;
+}): JSX.Element {
     return (
         <div>
             <h1 className="font-rubik text-[2rem]/tight font-semibold text-brand-neutral-1000">Login</h1>
@@ -56,9 +62,11 @@ export default function LoginForm(): JSX.Element {
 
                     <Button
                         className="w-full justify-between px-4 uppercase"
+                        type="button"
                         variant="neutral"
+                        onClick={onClick}
                     >
-                        Login
+                        {label}
                         <ArrowRightIcon />
                     </Button>
 
