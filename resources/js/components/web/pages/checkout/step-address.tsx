@@ -8,13 +8,13 @@ import { Label } from '@/components/ui/label';
 import { useCheckout } from '@/pages/checkout/checkout';
 
 export default function StepAddress(): JSX.Element {
-    const { setActiveStep, setStepValid, scrollToStep } = useCheckout();
+    const { goToStep, setStepValid, scrollToStep } = useCheckout();
     const [isChecked, setIsChecked] = useState<boolean | 'indeterminate'>(true);
 
     function HandleConfirmation() {
         setStepValid('2');
-        setActiveStep('3');
         scrollToStep('2');
+        goToStep('3');
     }
 
     return (

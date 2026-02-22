@@ -6,12 +6,12 @@ import RegisterForm from '@/components/web/pages/auth/register-form';
 import { useCheckout } from '@/pages/checkout/checkout';
 
 export default function StepPersonnalInfo(): JSX.Element {
-    const { setActiveStep, setStepValid, scrollToStep } = useCheckout();
+    const { goToStep, setStepValid, scrollToStep } = useCheckout();
 
     const HandleClick = () => {
         setStepValid('1');
-        setActiveStep('2');
         scrollToStep('1');
+        goToStep('2');
     };
 
     return (

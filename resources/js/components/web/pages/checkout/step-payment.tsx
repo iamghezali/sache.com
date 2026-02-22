@@ -7,12 +7,12 @@ import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { useCheckout } from '@/pages/checkout/checkout';
 
 export default function StepPayment(): JSX.Element {
-    const { setActiveStep, setStepValid, scrollToStep } = useCheckout();
+    const { goToStep, setStepValid, scrollToStep } = useCheckout();
 
     function HandleConfirmation() {
         setStepValid('4');
-        setActiveStep('5');
         scrollToStep('4');
+        goToStep('5');
     }
 
     return (

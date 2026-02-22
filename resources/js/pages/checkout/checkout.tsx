@@ -23,7 +23,7 @@ interface Step {
 }
 
 interface CheckoutContextType {
-    setActiveStep: (step: string) => void;
+    goToStep: (step: string) => void;
     setStepValid: (step: string) => void;
     scrollToStep: (step: string) => void;
 }
@@ -79,9 +79,13 @@ export default function Checkout(): JSX.Element {
     }
 
     function scrollToStep(step: string) {
+        stepsRefs.current[parseInt(step) - 1]?.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function goToStep(step: string) {
         setTimeout(() => {
-            stepsRefs.current[parseInt(step) - 1]?.scrollIntoView({ behavior: 'smooth' });
-        }, 300);
+            setActiveStep(step);
+        }, 500);
     }
 
     return (
@@ -90,7 +94,7 @@ export default function Checkout(): JSX.Element {
                 <div className="mt-5">
                     <div className="flex gap-25">
                         <div className="min-w-0 flex-1">
-                            <CheckoutContext.Provider value={{ setActiveStep, setStepValid, scrollToStep }}>
+                            <CheckoutContext.Provider value={{ goToStep, setStepValid, scrollToStep }}>
                                 <StepperAccordion
                                     className="flex flex-col gap-6"
                                     type="single"

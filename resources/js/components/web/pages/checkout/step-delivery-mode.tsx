@@ -8,12 +8,12 @@ import { Textarea } from '@/components/ui/textarea';
 import { useCheckout } from '@/pages/checkout/checkout';
 
 export default function StepDeliveryMode(): JSX.Element {
-    const { setActiveStep, setStepValid, scrollToStep } = useCheckout();
+    const { goToStep, setStepValid, scrollToStep } = useCheckout();
 
     function HandleConfirmation() {
         setStepValid('3');
-        setActiveStep('4');
         scrollToStep('3');
+        goToStep('4');
     }
 
     return (
