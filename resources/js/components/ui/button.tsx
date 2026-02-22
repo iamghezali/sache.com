@@ -10,8 +10,9 @@ const buttonVariants = cva(
         variants: {
             variant: {
                 default: 'bg-brand-primary-200 text-brand-neutral-1000 hover:bg-brand-neutral-1000/95 hover:text-white',
+                success: 'bg-success-200 text-black hover:bg-success-200/85',
                 destructive:
-                    'bg-error-100 text-white hover:bg-error-100/90 focus-visible:ring-error-100/20 dark:bg-error-100/60 dark:focus-visible:ring-error-100/40',
+                    'bg-error-100 text-black hover:bg-error-100/90 focus-visible:ring-error-100/20 dark:bg-error-100/60 dark:focus-visible:ring-error-100/40',
                 outline: 'border border-brand-neutral-1000 text-brand-neutral-1000 hover:bg-brand-neutral-1000/95 hover:text-white',
                 secondary: 'bg-brand-secondary-300 text-white hover:bg-brand-neutral-1000/95',
                 neutral: 'bg-brand-neutral-1000 text-white hover:bg-brand-neutral-1000/95',
@@ -21,6 +22,7 @@ const buttonVariants = cva(
             size: {
                 default: 'h-12 px-6 py-2',
                 sm: 'h-10.75 px-5 text-base font-semibold',
+                interactions: 'h-10.75 px-5 text-base font-normal',
                 inline: 'px-0 py-0',
                 icon: 'size-12',
                 'icon-md': 'size-10',
