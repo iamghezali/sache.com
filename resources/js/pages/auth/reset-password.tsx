@@ -43,9 +43,12 @@ export default function ResetPassword(): JSX.Element {
                                     className="w-full justify-between px-4 uppercase"
                                     type="button"
                                     variant="neutral"
+                                    asChild
                                 >
-                                    Send Code
-                                    <ArrowRightIcon />
+                                    <Link href="/verification-code">
+                                        Send Code
+                                        <ArrowRightIcon />
+                                    </Link>
                                 </Button>
                             </form>
                         </div>

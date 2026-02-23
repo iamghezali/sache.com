@@ -40,7 +40,7 @@ export default function LoginForm({
 
                         <Link
                             className="mt-3 block text-brand-neutral-1000 underline"
-                            href="#"
+                            href="/reset-password"
                         >
                             Forget your password?
                         </Link>

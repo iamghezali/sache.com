@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import PlaceholderImage from '@/components/ui/placeholderImage';
 import WebLayout from '@/layouts/web-layout';
+import { Link } from '@inertiajs/react';
 
 export default function NewPassword(): JSX.Element {
     return (
@@ -27,8 +28,9 @@ export default function NewPassword(): JSX.Element {
                                     className="w-full justify-between px-4 uppercase"
                                     type="button"
                                     variant="neutral"
+                                    asChild
                                 >
-                                    Update Password
+                                    <Link href="/reset-password/success">Update Password</Link>
                                 </Button>
                             </form>
                         </div>

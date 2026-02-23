@@ -1,3 +1,4 @@
+import { Link } from '@inertiajs/react';
 import { ArrowRightIcon } from 'lucide-react';
 import { type JSX } from 'react';
 import { Button } from '@/components/ui/button';
@@ -35,9 +36,12 @@ export default function ResetPassword(): JSX.Element {
                                         className="w-full justify-between px-4 uppercase"
                                         type="button"
                                         variant="neutral"
+                                        asChild
                                     >
-                                        Verify Code
-                                        <ArrowRightIcon />
+                                        <Link href="/new-password">
+                                            Verify Code
+                                            <ArrowRightIcon />
+                                        </Link>
                                     </Button>
 
                                     <Button
@@ -48,7 +52,7 @@ export default function ResetPassword(): JSX.Element {
                                         disabled={secondsLeft > 0 ? true : false}
                                     >
                                         Resend Code
-                                        {secondsLeft !== 0 && <span>{secondsLeft}</span>}
+                                        {secondsLeft !== 0 && <span className="normal-case">{secondsLeft}s</span>}
                                     </Button>
 
                                     <Button
