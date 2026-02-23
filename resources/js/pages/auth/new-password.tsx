@@ -1,9 +1,9 @@
+import { Link } from '@inertiajs/react';
 import type { JSX } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import PlaceholderImage from '@/components/ui/placeholderImage';
 import WebLayout from '@/layouts/web-layout';
-import { Link } from '@inertiajs/react';
 
 export default function NewPassword(): JSX.Element {
     return (
