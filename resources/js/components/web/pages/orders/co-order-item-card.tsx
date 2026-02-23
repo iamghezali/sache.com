@@ -1,3 +1,4 @@
+import { Link } from '@inertiajs/react';
 import { ArrowRightIcon, CheckIcon, CircleOffIcon, MessageCircleIcon } from 'lucide-react';
 import type { JSX } from 'react';
 import {
@@ -14,7 +15,7 @@ import {
 import { Button } from '@/components/ui/button';
 import OrdersBadge from '@/components/web/pages/orders/orders-badge';
 
-type OrderStatusType = 'under-review' | 'to-decide' | 'order-confirmed' | 'processing' | 'production' | 'order-payed';
+type OrderStatusType = 'under-review' | 'to-decide' | 'order-confirmed' | 'processing' | 'production' | 'order-paid';
 
 interface OrderItemInterface {
     id: string;
@@ -23,13 +24,13 @@ interface OrderItemInterface {
     order_type: 'custom_order' | 'ready-to-wear';
     order_status: OrderStatusType;
     last_update: string;
-    offer?: {
+    offer: {
         price: string;
         estimated_due_date: string;
     };
 }
 
-export default function OrderItemCard({ OrderItem }: { OrderItem: OrderItemInterface }): JSX.Element {
+export default function CoOrderItemCard({ OrderItem }: { OrderItem: OrderItemInterface }): JSX.Element {
     const statusLabels = {
         'under-review': {
             label: 'Under Review',
@@ -51,8 +52,8 @@ export default function OrderItemCard({ OrderItem }: { OrderItem: OrderItemInter
             label: 'Production',
             variant: 'white',
         },
-        'order-payed': {
-            label: 'Order Payed',
+        'order-paid': {
+            label: 'Order Paid',
             variant: 'orange-light',
         },
     } as const;
@@ -68,8 +69,7 @@ export default function OrderItemCard({ OrderItem }: { OrderItem: OrderItemInter
 
                     <div className="flex items-baseline gap-1">
                         <span className="text-brand-neutral-alt-700">Order Type:</span>
-                        <span>{OrderItem.order_type === 'custom_order' && 'Custom Order'}</span>
-                        <span>{OrderItem.order_type === 'ready-to-wear' && 'Ready-To-Wear'}</span>
+                        <span>Custom Order</span>
                     </div>
                 </div>
 
@@ -86,15 +86,15 @@ export default function OrderItemCard({ OrderItem }: { OrderItem: OrderItemInter
 
                 <div className="mt-6 flex items-center justify-between">
                     <div className="flex items-baseline gap-1">
-                        {OrderItem.order_status === 'to-decide' ? (
-                            <>
-                                <span className="text-brand-neutral-alt-700">Estimated Delivery Date:</span>
-                                <span className="font-semibold">{OrderItem.offer?.estimated_due_date}</span>
-                            </>
-                        ) : (
+                        {OrderItem.order_status === 'order-paid' ? (
                             <>
                                 <span className="text-brand-neutral-alt-700">Updated On:</span>
                                 <span>{OrderItem.last_update}</span>
+                            </>
+                        ) : (
+                            <>
+                                <span className="text-brand-neutral-alt-700">Estimated Delivery Date:</span>
+                                <span className="font-semibold">{OrderItem.offer?.estimated_due_date}</span>
                             </>
                         )}
                     </div>
@@ -145,9 +145,12 @@ export default function OrderItemCard({ OrderItem }: { OrderItem: OrderItemInter
                         <Button
                             className="min-w-48"
                             size="sm"
+                            asChild
                         >
-                            View Order
-                            <ArrowRightIcon strokeWidth={3} />
+                            <Link href="/shop/orders/custom-order/sash-order-id">
+                                View Order
+                                <ArrowRightIcon strokeWidth={3} />
+                            </Link>
                         </Button>
                     )}
                 </div>

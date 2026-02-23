@@ -1,7 +1,8 @@
 import type { JSX } from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import CoOrderItemCard from '@/components/web/pages/orders/co-order-item-card';
 import EmptyOrders from '@/components/web/pages/orders/empty-orders';
-import OrderItemCard from '@/components/web/pages/orders/order-item-card';
+import RtwOrderItemCard from '@/components/web/pages/orders/rtw-order-item-card';
 import WebLayout from '@/layouts/web-layout';
 
 export default function OrdersList(): JSX.Element {
@@ -25,7 +26,7 @@ export default function OrdersList(): JSX.Element {
 
                             <TabsContent value="all">
                                 <div className="flex flex-col gap-6">
-                                    <OrderItemCard
+                                    <CoOrderItemCard
                                         OrderItem={{
                                             id: '1',
                                             title: 'Order Item 1',
@@ -40,7 +41,7 @@ export default function OrdersList(): JSX.Element {
                                         }}
                                     />
 
-                                    <OrderItemCard
+                                    <RtwOrderItemCard
                                         OrderItem={{
                                             id: '2',
                                             title: 'Order Item 2',
@@ -53,22 +54,12 @@ export default function OrdersList(): JSX.Element {
                                 </div>
                             </TabsContent>
 
-                            <TabsContent value="active">
-                                <OrderItemCard
-                                    OrderItem={{
-                                        id: '3',
-                                        title: 'Order Item 3',
-                                        order_id: '3223',
-                                        order_type: 'custom_order',
-                                        order_status: 'production',
-                                        last_update: '14/03/2026',
-                                    }}
-                                />
-                            </TabsContent>
+                            <TabsContent value="active">Active.</TabsContent>
+
                             <TabsContent value="delivered">
                                 <EmptyOrders message="Your don't have delivered items" />
                             </TabsContent>
-                            <TabsContent value="custom">Custom.</TabsContent>
+                            <TabsContent value="custom"></TabsContent>
                         </Tabs>
                     </div>
                 </div>

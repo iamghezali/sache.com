@@ -8,12 +8,24 @@ Route::get('/', function () {
 })->name('home');
 
 Route::get('/login', function () {
-    return Inertia::render('login');
+    return Inertia::render('auth/login');
 })->name('login');
 
 Route::get('/register', function () {
-    return Inertia::render('register');
+    return Inertia::render('auth/register');
 })->name('register');
+
+Route::get('/reset-password', function () {
+    return Inertia::render('auth/reset-password');
+})->name('reset-password');
+
+Route::get('/verification-code', function () {
+    return Inertia::render('auth/verification-code');
+})->name('verification-code');
+
+Route::get('/new-password', function () {
+    return Inertia::render('auth/new-password');
+})->name('new-password');
 
 Route::get('/shop', function () {
     return Inertia::render('shop');
