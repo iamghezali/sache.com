@@ -14,7 +14,7 @@ export default function SecondaryNavigation(): JSX.Element {
                     >
                         <Link
                             className="inline-block px-3 py-1.5 font-semibold"
-                            href="/custom-order/create/"
+                            href="/custom-order/create/?first_time"
                         >
                             Custom Order
                             <ArrowRightIcon strokeWidth={3} />

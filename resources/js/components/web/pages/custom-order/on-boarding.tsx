@@ -24,7 +24,7 @@ export default function OnBoarding(): JSX.Element {
                 break;
 
             case 'step-3':
-                router.visit('/');
+                router.visit('/custom-order/create/');
                 break;
 
             default:
