@@ -10,6 +10,7 @@ export default function OnBoarding(): JSX.Element {
     useAOS();
 
     const [activeTab, setActiveTab] = useState<string>('step-1');
+    const [buttonLabel, setButtonLabel] = useState<string>('Next');
 
     function GotoNext() {
         switch (activeTab) {
@@ -18,6 +19,7 @@ export default function OnBoarding(): JSX.Element {
                 break;
 
             case 'step-2':
+                setButtonLabel('Get Started');
                 setActiveTab('step-3');
                 break;
 
@@ -201,7 +203,7 @@ export default function OnBoarding(): JSX.Element {
                                 size="sm"
                                 onClick={GotoNext}
                             >
-                                Next
+                                {buttonLabel}
                                 <ArrowRightIcon strokeWidth={3} />
                             </Button>
 
