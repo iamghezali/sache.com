@@ -1,7 +1,7 @@
 import { router } from '@inertiajs/react';
 import { ArrowRightIcon } from 'lucide-react';
 import { Tabs as TabsPrimitive } from 'radix-ui';
-import { useState, type JSX } from 'react';
+import { useEffect, useState, type JSX } from 'react';
 import { Button } from '@/components/ui/button';
 import PlaceholderImage from '@/components/ui/placeholderImage';
 import useAOS from '@/hooks/useAOS';
@@ -19,18 +19,25 @@ export default function OnBoarding(): JSX.Element {
                 break;
 
             case 'step-2':
-                setButtonLabel('Get Started');
                 setActiveTab('step-3');
                 break;
 
             case 'step-3':
-                router.visit('/custom-order/create/');
+                router.visit('/custom-order/create/?step=1');
                 break;
 
             default:
                 break;
         }
     }
+
+    useEffect(() => {
+        if (activeTab === 'step-3') {
+            setButtonLabel('Get Started');
+        } else {
+            setButtonLabel('Next');
+        }
+    }, [activeTab]);
 
     return (
         <section>
@@ -207,7 +214,7 @@ export default function OnBoarding(): JSX.Element {
                                 <ArrowRightIcon strokeWidth={3} />
                             </Button>
 
-                            <TabsPrimitive.TabsList className="mt-6 inline-flex w-69 gap-4 border">
+                            <TabsPrimitive.TabsList className="mt-6 inline-flex w-69 gap-4">
                                 <TabsPrimitive.TabsTrigger
                                     className='h-1.5 flex-1 rounded-full bg-brand-neutral-alt-400 transition-all data-[state="active"]:bg-brand-primary-300'
                                     data-orientation="horizontal"

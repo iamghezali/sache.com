@@ -18,6 +18,8 @@ const buttonVariants = cva(
                 neutral: 'bg-brand-neutral-1000 text-white hover:bg-brand-neutral-1000/95',
                 ghost: 'hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50',
                 link: 'text-primary underline-offset-4 hover:underline',
+                vertical:
+                    'w-full flex-col gap-4 rounded-2xl border border-brand-primary-200 bg-brand-primary-100/60 text-xl hover:bg-brand-primary-100/40',
             },
             size: {
                 default: 'h-12 px-6 py-2',
@@ -27,6 +29,7 @@ const buttonVariants = cva(
                 icon: 'size-12',
                 'icon-md': 'size-10',
                 pagination: 'px-4 py-2',
+                rectangle: 'h-47',
             },
         },
         defaultVariants: {

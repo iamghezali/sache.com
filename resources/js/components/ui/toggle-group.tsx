@@ -25,6 +25,16 @@ const toggleVariants = cva(
                 ],
 
                 'colors-filter': ['rounded-lg ring-3 ring-transparent', 'data-[state=on]:ring-brand-neutral-1000'],
+
+                'custom-order': [
+                    'inline-flex h-12 flex-1 items-center justify-center gap-2 rounded-lg border border-brand-neutral-alt-500 text-black disabled:bg-brand-neutral-200 disabled:text-brand-neutral-500',
+                    'data-[state=on]:border-brand-primary-100 data-[state=on]:bg-brand-primary-100',
+                ],
+
+                'custom-gender': [
+                    'inline-flex h-12 flex-1 items-center justify-center gap-2 rounded-lg border border-brand-neutral-alt-500 text-black disabled:text-brand-neutral-alt-500',
+                    'data-[state=on]:border-[#D89DBA] data-[state=on]:bg-[#D89DBA]',
+                ],
             },
         },
         defaultVariants: {
