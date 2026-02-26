@@ -39,6 +39,10 @@ Route::get('/reset-password/success', function () {
     return Inertia::render('auth/reset-password-success');
 })->name('reset-password.success');
 
+Route::get('/user-settings', function () {
+    return Inertia::render('user-settings');
+})->name('user-settings');
+
 Route::get('/shop', function () {
     return Inertia::render('shop');
 })->name('shop');
