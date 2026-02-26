@@ -70,3 +70,7 @@ Route::get('/shop/orders/', function () {
 Route::get('/custom-order/create/', function () {
     return Inertia::render('custom-order/create-custom');
 })->name('custom-order.create');
+
+Route::get('/inbox', function () {
+    return Inertia::render('inbox');
+})->name('inbox');
