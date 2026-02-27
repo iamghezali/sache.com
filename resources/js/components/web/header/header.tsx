@@ -1,6 +1,6 @@
 import { Link } from '@inertiajs/react';
 import type { JSX } from 'react';
-import logo from '@/assets/sach-logo.png';
+import logoHorizontal from '@/assets/logo-horizontal.svg';
 import PrimaryNavigation from '@/components/web/header/primary-navigation';
 import SecondaryNavigation from '@/components/web/header/secondary-navigation';
 
@@ -15,8 +15,8 @@ export default function Header(): JSX.Element {
                 <div className="shrink-0">
                     <Link href={'/'}>
                         <img
-                            className="h-9.5"
-                            src={logo}
+                            className="h-22.5"
+                            src={logoHorizontal}
                             alt="Sach Logo"
                         />
                     </Link>
