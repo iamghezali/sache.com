@@ -1,3 +1,4 @@
+import { Link } from '@inertiajs/react';
 import type { JSX } from 'react';
 import logoPrimary from '@/assets/logo-primary.svg';
 import logoWhiteBig from '@/assets/logo-white-big.svg';
@@ -81,10 +82,10 @@ export default function Footer(): JSX.Element {
 
                                 <ul className="mt-4 space-y-2 text-xl text-brand-neutral-100">
                                     <li>
-                                        <a href="#">About</a>
+                                        <Link href="/about">About</Link>
                                     </li>
                                     <li>
-                                        <a href="#">Contact</a>
+                                        <Link href="/contact">Contact</Link>
                                     </li>
                                     <li>
                                         <a href="#">Privacy Policy</a>
