@@ -6,7 +6,14 @@ import ProductCard from '@/components/web/product-card';
 import WebLayout from '@/layouts/web-layout';
 
 export default function Shop() {
-    const productsList = Array.from({ length: 9 });
+    let productsList = Array.from({ length: 9 });
+
+    const params = new URLSearchParams(window.location.search);
+    const noItems = params.get('noItems');
+
+    if (noItems !== null) {
+        productsList = [];
+    }
 
     return (
         <WebLayout>

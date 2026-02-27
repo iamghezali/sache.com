@@ -1,3 +1,4 @@
+import { Link } from '@inertiajs/react';
 import { ArchiveIcon, RotateCcwIcon } from 'lucide-react';
 import type { JSX } from 'react';
 import { Button } from '@/components/ui/button';
@@ -10,9 +11,12 @@ export default function EmptyList(): JSX.Element {
             <Button
                 className="mt-8 w-74"
                 size="sm"
+                asChild
             >
-                Clear Filters
-                <RotateCcwIcon strokeWidth={3} />
+                <Link href="/shop/">
+                    Clear Filters
+                    <RotateCcwIcon strokeWidth={3} />
+                </Link>
             </Button>
         </div>
     );

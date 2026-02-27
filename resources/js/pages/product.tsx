@@ -123,7 +123,7 @@ export default function Product(): JSX.Element {
                                     variant="secondary"
                                     asChild
                                 >
-                                    <Link href="/shop/cart/">Buy it Now</Link>
+                                    <Link href="/shop/cart/?itemExist">Buy it Now</Link>
                                 </Button>
                             </div>
 

@@ -7,7 +7,8 @@ import ProductCarousel from '@/components/web/products-carousel';
 import WebLayout from '@/layouts/web-layout';
 
 export default function Cart(): JSX.Element {
-    const cartItemsList = Array.from({ length: 1 });
+    const params = new URLSearchParams(window.location.search);
+    const itemExist = params.get('itemExist');
 
     return (
         <WebLayout>
@@ -17,21 +18,17 @@ export default function Cart(): JSX.Element {
                         <h1 className="text-[2rem]/tight font-semibold text-brand-neutral-1000">Cart</h1>
                     </div>
 
-                    {cartItemsList.length === 0 ? (
-                        <EmptyCart />
-                    ) : (
+                    {itemExist !== null ? (
                         <div className="mt-8 flex items-start gap-24">
                             <div className="min-w-0 grow rounded-2xl bg-brand-shade-white p-6">
                                 <h2 className="text-[2rem]/tight leading-9.5 font-semibold text-brand-neutral-1000">Your Bag</h2>
                                 <span className="mt-2 inline-block leading-5.5 text-brand-neutral-1000/80">
-                                    Items in your bag not reserved- check out now to make them yours.
+                                    Items in your bag not reserved check out now to make them yours.
                                 </span>
 
                                 <div className="mt-11">
                                     <div className="flex flex-col gap-10">
-                                        {cartItemsList.map((_, i) => (
-                                            <CartItem key={`cart-item-${i}`} />
-                                        ))}
+                                        <CartItem />
                                     </div>
                                 </div>
                             </div>
@@ -71,6 +68,8 @@ export default function Cart(): JSX.Element {
                                 </div>
                             </div>
                         </div>
+                    ) : (
+                        <EmptyCart />
                     )}
                 </div>
             </section>
