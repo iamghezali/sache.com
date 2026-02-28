@@ -1,6 +1,18 @@
 import { Link } from '@inertiajs/react';
-import { CheckIcon, CircleOffIcon, MessageCircleIcon } from 'lucide-react';
-import type { JSX } from 'react';
+import { ArrowRightIcon, CheckIcon, CircleOffIcon, MessageCircleIcon } from 'lucide-react';
+import { type JSX } from 'react';
+
+import {
+    AlertDialog,
+    AlertDialogAction,
+    AlertDialogContent,
+    AlertDialogDescription,
+    AlertDialogFooter,
+    AlertDialogHeader,
+    AlertDialogTitle,
+    AlertDialogTrigger,
+} from '@/components/ui/alert-dialog';
+
 import { Button } from '@/components/ui/button';
 import { statusLabels, type CO_Order, type CO_Order_Offer, type RTW_Order } from '@/components/web/pages/orders';
 import OrdersBadge from '@/components/web/pages/orders/orders-badge';
@@ -59,22 +71,44 @@ export default function OrderCard({ orderData }: OrderCardInterface): JSX.Elemen
                 <div>
                     {orderData.status === 'to-decide' ? (
                         <div className="flex gap-2">
-                            <Button
-                                className="w-60"
-                                variant="destructive"
-                                size="interactions"
-                            >
-                                Decline & Cancel Order
-                                <CircleOffIcon />
-                            </Button>
+                            <AlertDialog>
+                                <AlertDialogTrigger asChild>
+                                    <Button
+                                        className="w-60"
+                                        variant="destructive"
+                                        size="interactions"
+                                    >
+                                        Decline & Cancel Order
+                                        <CircleOffIcon />
+                                    </Button>
+                                </AlertDialogTrigger>
+
+                                <AlertDialogContent>
+                                    <AlertDialogHeader>
+                                        <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
+                                        <AlertDialogDescription>
+                                            This action cannot be undone. This will permanently delete your account from our servers.
+                                        </AlertDialogDescription>
+                                    </AlertDialogHeader>
+                                    <AlertDialogFooter>
+                                        <AlertDialogAction variant="destructive">
+                                            Decline & Cancel Order
+                                            <CircleOffIcon />
+                                        </AlertDialogAction>
+                                    </AlertDialogFooter>
+                                </AlertDialogContent>
+                            </AlertDialog>
 
                             <Button
                                 className="w-60 text-black hover:bg-brand-secondary-300/80"
                                 variant="secondary"
                                 size="interactions"
+                                asChild
                             >
-                                Negociate
-                                <MessageCircleIcon />
+                                <Link href="/inbox">
+                                    Negociate
+                                    <MessageCircleIcon />
+                                </Link>
                             </Button>
 
                             <Button
@@ -88,7 +122,15 @@ export default function OrderCard({ orderData }: OrderCardInterface): JSX.Elemen
                         </div>
                     ) : (
                         <>
-                            <Button size="sm">View Order</Button>
+                            <Button
+                                size="sm"
+                                asChild
+                            >
+                                <Link href="">
+                                    View Order
+                                    <ArrowRightIcon />
+                                </Link>
+                            </Button>
                         </>
                     )}
                 </div>

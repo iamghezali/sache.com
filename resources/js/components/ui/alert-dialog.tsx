@@ -1,3 +1,4 @@
+import { XIcon } from 'lucide-react';
 import { AlertDialog as AlertDialogPrimitive } from 'radix-ui';
 import * as React from 'react';
 
@@ -62,7 +63,12 @@ function AlertDialogContent({
                 data-slot="alert-dialog-content"
                 data-size={size}
                 {...props}
-            />
+            >
+                <AlertDialogPrimitive.Cancel className="absolute top-2 right-2 cursor-pointer">
+                    <XIcon />
+                </AlertDialogPrimitive.Cancel>
+                {props.children}
+            </AlertDialogPrimitive.Content>
         </AlertDialogPortal>
     );
 }
@@ -132,7 +138,7 @@ function AlertDialogMedia({ className, ...props }: React.ComponentProps<'div'>) 
 function AlertDialogAction({
     className,
     variant = 'default',
-    size = 'default',
+    size = 'sm',
     ...props
 }: React.ComponentProps<typeof AlertDialogPrimitive.Action> & Pick<React.ComponentProps<typeof Button>, 'variant' | 'size'>) {
     return (
@@ -153,7 +159,7 @@ function AlertDialogAction({
 function AlertDialogCancel({
     className,
     variant = 'outline',
-    size = 'default',
+    size = 'sm',
     ...props
 }: React.ComponentProps<typeof AlertDialogPrimitive.Cancel> & Pick<React.ComponentProps<typeof Button>, 'variant' | 'size'>) {
     return (
