@@ -31,7 +31,7 @@ export default function StepNewCustomOrder(): JSX.Element {
                 size="sm"
                 asChild
             >
-                <Link href="/shop/orders">
+                <Link href="/shop/orders?itemExist">
                     View My Orders
                     <ArrowRightIcon strokeWidth={3} />
                 </Link>
